@@ -2,6 +2,8 @@
 
 # Copy the new JAR to the build location
 
+pwd
+
 cp -f java-app/target/*.jar jenkins/build/
 
 echo "****************************"
