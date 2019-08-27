@@ -23,7 +23,7 @@ pipeline {
 		echo "**********************************"
 		echo "***   Testing JAR   *************"		
 		WORKSPACE=/home/jenkins/jenkins_data/jenkins_home/workspace/pipeline-docker-maven
-		docker run --rm -i -v $PWD/java-app:/app -v /root/.m2:/root/.m2 -w /app maven:3-alpine mvn test
+		docker run --rm -i -v $WORKSPACE/java-app:/app -v /root/.m2:/root/.m2 -w /app maven:3-alpine mvn test
 		echo maven-project > /tmp/.auth
 		echo 10 >> /tmp/.auth
 		echo sd8tr8mr-hs-== >> /tmp/.auth
