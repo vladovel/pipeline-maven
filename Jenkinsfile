@@ -1,9 +1,15 @@
 pipeline {
-    agent any
+    agent {
+        label 'master'
+    } 
     
     stages {
         
         stage("Build") {
+            agent {
+                label 'master'
+            }
+
             steps {
                 sh '''
                     echo build ...
@@ -14,6 +20,9 @@ pipeline {
         }
         
         stage("Test") {
+            agent {
+                label 'master'
+            }
             steps {
                 sh '''
                     echo test ...
